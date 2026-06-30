@@ -132,7 +132,7 @@ export default function IntroScreen({ onStart }: IntroScreenProps) {
           onClick={onStart}
           id="intro-start-btn"
         >
-          Явцгааяа! ✨
+          Явцгаая! ✨
         </button>
       </div>
     </div>
