@@ -1,0 +1,208 @@
+.wallContainer {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  text-align: center;
+  font-family: var(--font-cursive);
+  font-size: 36px;
+  color: var(--color-gold);
+  margin-bottom: 24px;
+  text-shadow: 0 0 10px rgba(229, 193, 88, 0.2);
+}
+
+.description {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin-bottom: 30px;
+  max-width: 500px;
+}
+
+/* Wish Form */
+.wishForm {
+  width: 100%;
+  max-width: 500px;
+  padding: 24px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  opacity: 0.8;
+}
+
+.input, .textarea {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 10px 14px;
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.input:focus, .textarea:focus {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--color-violet);
+  box-shadow: 0 0 0 2px rgba(142, 84, 233, 0.2);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.submitBtn {
+  background: linear-gradient(135deg, var(--color-violet), var(--color-rose));
+  border: none;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(142, 84, 233, 0.3);
+}
+
+.submitBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(142, 84, 233, 0.5);
+  background: linear-gradient(135deg, #9e6cf5, #ff7aab);
+}
+
+.submitBtn:active {
+  transform: translateY(0);
+}
+
+/* Notes Grid */
+.notesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 24px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.noteCard {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  padding: 20px;
+  position: relative;
+  transition: all 0.3s ease;
+  box-shadow: var(--card-shadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 160px;
+}
+
+.noteCard:hover {
+  transform: translateY(-5px) scale(1.02) !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Tape decoration */
+.tape {
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(2px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.noteText {
+  font-family: var(--font-cursive);
+  font-size: 20px;
+  line-height: 1.4;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+  word-break: break-word;
+}
+
+.noteFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  color: var(--text-secondary);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 8px;
+}
+
+.noteSender {
+  font-weight: 600;
+  color: var(--color-gold);
+}
+
+.noteDate {
+  opacity: 0.7;
+}
+
+/* Card glow themes */
+.glowPink {
+  border-left: 4px solid var(--color-rose);
+  box-shadow: 0 4px 15px -3px rgba(255, 94, 151, 0.1);
+}
+.glowPink:hover {
+  box-shadow: 0 8px 25px -3px rgba(255, 94, 151, 0.2);
+}
+
+.glowGold {
+  border-left: 4px solid var(--color-gold);
+  box-shadow: 0 4px 15px -3px rgba(229, 193, 88, 0.1);
+}
+.glowGold:hover {
+  box-shadow: 0 8px 25px -3px rgba(229, 193, 88, 0.2);
+}
+
+.glowViolet {
+  border-left: 4px solid var(--color-violet);
+  box-shadow: 0 4px 15px -3px rgba(142, 84, 233, 0.1);
+}
+.glowViolet:hover {
+  box-shadow: 0 8px 25px -3px rgba(142, 84, 233, 0.2);
+}
+
+.glowBlue {
+  border-left: 4px solid var(--color-blue);
+  box-shadow: 0 4px 15px -3px rgba(71, 118, 230, 0.1);
+}
+.glowBlue:hover {
+  box-shadow: 0 8px 25px -3px rgba(71, 118, 230, 0.2);
+}
+
+@media (max-width: 640px) {
+  .notesGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}

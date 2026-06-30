@@ -1,0 +1,20 @@
+.root {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Screen transition wrapper */
+.screenEnter {
+  animation: screenIn 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes screenIn {
+  from {
+    transform: translateY(20px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+

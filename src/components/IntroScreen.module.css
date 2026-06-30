@@ -1,0 +1,114 @@
+.screen {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(ellipse at 30% 40%, #2d1060 0%, #150d27 50%, #0d0813 100%);
+  overflow: hidden;
+  z-index: 10;
+}
+
+/* ─── Floating confetti shapes ─────────────────── */
+.shapes {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.shape {
+  position: absolute;
+  opacity: 0.7;
+  animation: drift linear infinite;
+}
+
+/* ─── Center card ──────────────────────────────── */
+.card {
+  position: relative;
+  z-index: 2;
+  width: min(480px, 90vw);
+  padding: 56px 48px;
+  background: rgba(30, 18, 58, 0.85);
+  border: 1px solid rgba(255, 45, 107, 0.35);
+  border-radius: 28px;
+  text-align: center;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.04),
+              0 30px 80px rgba(0, 0, 0, 0.5),
+              0 0 60px rgba(255, 45, 107, 0.12);
+  animation: scaleIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+  backdrop-filter: blur(20px);
+}
+
+.label {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent-pink);
+  margin-bottom: 24px;
+  background: rgba(255, 45, 107, 0.08);
+  padding: 5px 14px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 45, 107, 0.2);
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: clamp(30px, 6vw, 42px);
+  font-weight: 900;
+  line-height: 1.2;
+  color: var(--accent-pink);
+  margin-bottom: 28px;
+  animation: textGlow 3s ease-in-out infinite;
+  text-shadow: 0 0 20px rgba(255, 45, 107, 0.3);
+}
+
+.emojis {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  font-size: 48px;
+  margin-bottom: 36px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.btn {
+  padding: 16px 48px;
+  background: var(--accent-gradient);
+  border: none;
+  border-radius: 50px;
+  color: #fff;
+  font-family: var(--font-sans);
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 30px rgba(255, 45, 107, 0.45);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: glowPulse 2.5s ease-in-out infinite;
+  letter-spacing: 0.3px;
+}
+
+.btn:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 10px 40px rgba(255, 45, 107, 0.65);
+  background: linear-gradient(135deg, #ff4d85, #c678ff);
+}
+
+.btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.88); }
+  to   { transform: scale(1); }
+}
+
+@keyframes drift {
+  0%   { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+  10%  { opacity: 0.7; }
+  90%  { opacity: 0.7; }
+  100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+}
